@@ -1,0 +1,60 @@
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+using namespace std;
+int main(void)
+{
+	int n,res=0,sum;
+	vector<int>v;
+	cout<<"enter the number of element   ";
+	{
+	cin>>n;
+	v.push_back(n);
+	}
+			vector<int>v1;
+			while(n!=0)
+			{
+				int rem=n%10;
+				 res=res*10+rem;
+				 n=n/10;
+				 v1.push_back(rem);
+			}
+			vector<int>v2;
+			for(auto itr=v1.rbegin();itr!=v1.rend();itr++)
+			v2.push_back(*itr);
+		
+		for(auto x:v2)
+		cout<<x<<" ";
+		
+		cout<<endl;
+		map<int,int>mp;
+		for(int i=0;i<v2.size();i++)
+		{
+		mp[v2[i]]++;
+    	}
+		for(auto x:mp)
+		cout<<x.first<<" "<<x.second<<endl;
+		int key=0;
+		
+		mp.find(key)!=mp.end();
+		auto mes=mp.find(key);
+		cout<<mes->first<<" "<<mes->second<<endl;
+	
+		auto temp=1;
+		
+		
+		mp.find(temp)!=mp.end();
+		auto k=mp.find(temp);		
+	    cout<<k->first<<" "<<k->second<<endl;
+	    
+	    
+	    
+	if(v2[0]==mes->second && v2[1]==k->second)
+	{
+	sum=mes->second + k->second;	
+	}
+	else
+	sum=0;
+	
+	cout<<sum;
+	}
